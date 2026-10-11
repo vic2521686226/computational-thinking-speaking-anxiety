@@ -1,20 +1,57 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
-<title>Computational Thinking: Speaking Anxiety</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body><main>
-<header><div><div class="eyebrow">An interactive study · 01</div><h1>Speaking anxiety</h1><p>Different thoughts. Same feeling. Explore how anxiety sources can shape the experience of speaking in class.</p></div><span class="tag">Classroom / speaking</span></header>
-<div class="layout">
-<section class="scene" id="scene" aria-label="Interactive visualization of speaking anxiety"><div class="room" aria-hidden="true"></div><div class="scene-label">A thought before speaking</div><div class="gazes" aria-hidden="true"><i class="eye"></i><i class="eye"></i><i class="eye"></i><i class="eye"></i></div><div class="prompt" id="prompt"><small>Speaking prompt</small><div class="speech" id="speech">I know what I want to say. I just need to begin.</div></div><div class="caption">The visual response changes as each source shifts.</div></section>
-<section class="controls" aria-labelledby="sources-title"><h2 id="sources-title">Anxiety sources</h2><p>Adjust each source and notice what changes in the scene.</p>
-<div class="control"><div class="line"><label for="peer">Peer anxiety</label><output class="value" id="peerValue">45%</output></div><input id="peer" type="range" min="0" max="100" value="45" aria-describedby="peerHelp"><div class="desc" id="peerHelp">More watching eyes gather around the speaker.</div></div>
-<div class="control"><div class="line"><label for="language">Language anxiety</label><output class="value" id="languageValue">32%</output></div><input id="language" type="range" min="0" max="100" value="32" aria-describedby="languageHelp"><div class="desc" id="languageHelp">Words feel less familiar as their spacing widens.</div></div>
-<div class="control"><div class="line"><label for="reasoning">Reasoning anxiety</label><output class="value" id="reasoningValue">50%</output></div><input id="reasoning" type="range" min="0" max="100" value="50" aria-describedby="reasoningHelp"><div class="desc" id="reasoningHelp">The thought becomes slightly unsteady.</div></div>
-<div class="control"><div class="line"><label for="content">Content anxiety</label><output class="value" id="contentValue">28%</output></div><input id="content" type="range" min="0" max="100" value="28" aria-describedby="contentHelp"><div class="desc" id="contentHelp">The prompt fades as the content feels harder to reach.</div></div>
-</section></div>
-<footer>A visual metaphor for reflection and exploration. Anxiety levels are interactive representations, not diagnoses.</footer>
-</main>
-<script src="script.js" defer></script></body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Under the Gaze — Speaking Anxiety Study</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="wrap">
+      <header><div class="brand">An interaction study · 01</div><div class="status">Classroom / speaking</div></header>
+      <h1>Under the Gaze</h1>
+      <p class="intro">When attention turns toward you, the room seems to close in. Two kinds of judgment gather into one pulse.</p>
+      <section class="scene" aria-label="Abstract visualization of classroom speaking anxiety">
+        <div class="scene-label">The room is watching</div>
+        <div class="gaze" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="core" id="core">
+          <div class="heart" id="heart" aria-hidden="true">
+            <div class="heart-shape"></div>
+            <div class="eye left" id="eyeExternal"><span class="pupil"></span></div>
+            <div class="eye right" id="eyeSelf"><span class="pupil"></span></div>
+          </div>
+        </div>
+        <div class="scene-foot"><span>Peer attention</span><span>Self-perception</span></div>
+      </section>
+      <div class="grid">
+        <section class="panel" aria-labelledby="anxiety-title">
+          <h2 id="anxiety-title">Anxiety sources</h2>
+          <div class="control">
+            <div class="row"><label for="external">External evaluation</label><output class="value" id="externalValue" for="external">42%</output></div>
+            <div class="hint">Peers and professor judging me</div>
+            <input id="external" type="range" min="0" max="100" value="42" aria-describedby="externalHelp" />
+            <span class="hint" id="externalHelp">Changes the left eye</span>
+          </div>
+          <div class="control">
+            <div class="row"><label for="self">Self-judgment</label><output class="value" id="selfValue" for="self">56%</output></div>
+            <div class="hint">The judgment I turn toward myself</div>
+            <input id="self" type="range" min="0" max="100" value="56" aria-describedby="selfHelp" />
+            <span class="hint" id="selfHelp">Changes the right eye</span>
+          </div>
+        </section>
+        <section class="panel" aria-labelledby="body-title">
+          <h2 id="body-title">Body response · simulated</h2>
+          <div class="readouts">
+            <div class="metric"><div class="metric-top"><span>Heartbeat</span><span class="unit">simulated</span></div><strong><span id="bpm">—</span> <span class="unit">bpm</span></strong></div>
+            <div class="metric"><div class="metric-top"><span>Breathing</span><span class="unit">simulated</span></div><strong><span id="breath">—</span> <span class="unit">/ min</span></strong></div>
+          </div>
+          <div class="keys">Adjust response: <kbd>↑</kbd><kbd>↓</kbd> heartbeat · <kbd>←</kbd><kbd>→</kbd> breathing</div>
+          <p class="note">Anxiety raises both simulated rates. Arrow keys add a personal adjustment; focus a slider to change its value with the same keys.</p>
+        </section>
+      </div>
+      <footer>Visual metaphor for a design prototype. Simulated rates are illustrative and are not medical measurements.</footer>
+    </main>
+  </body>
+</html>
