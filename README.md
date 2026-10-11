@@ -2,6 +2,14 @@
 
 A simple, self-contained HTML, CSS, and JavaScript prototype exploring four sources of classroom speaking anxiety through interaction.
 
+## Files
+
+- `index.html` contains the page structure and loads the stylesheet and script.
+- `styles.css` contains the visual design and responsive layout.
+- `script.js` controls the interactive anxiety sliders.
+
+Keep the three files together in the same folder.
+
 ## Run locally
 
 Open `index.html` in a modern web browser. No build step, dependencies, or external services are required.
